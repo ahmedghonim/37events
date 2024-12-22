@@ -19,13 +19,13 @@ export default function Footer() {
   ];
 
   const menuItemsAR = [
-    { name: "بيت", link: "/" },
+    { name: "الرئيسيه", link: "/" },
     { name: "من نحن", link: "/about/" },
     { name: "ماذا نفعل", link: "/services/" },
     { name: "المشاريع", link: "/projects/" },
     { name: "مدونتنا", link: "/blog/" },
     { name: "وظائف", link: "/careers/" },
-    { name: "اتصال", link: "/contact/" },
+    { name: "تواصل معنا", link: "/contact/" },
     //  { name: "English", link: "/#", action: handleMenuWithLanguage },
   ];
   return (

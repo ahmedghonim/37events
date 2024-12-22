@@ -1,6 +1,12 @@
 @tailwind base;
 /* @tailwind components; */
 @tailwind utilities;
+* {
+  font-family: "Lama Light", sans-serif !important;
+}
+.single-post p {
+  margin-bottom: 15px;
+}
 .header-section {
   position: absolute;
   width: 100%;
@@ -99,8 +105,6 @@
   position: fixed;
   right: 0;
   width: 30%;
-  top: 60%;
-  transform: translate(-50%, -50%);
   z-index: 2;
   visibility: hidden;
   opacity: 0;

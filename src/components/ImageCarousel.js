@@ -44,15 +44,18 @@ const ImageCarousel = ({ services }) => {
         services.map((item, index) => (
           <div className="col-md-12" key={index}>
             <div className="card text-center">
-              <div className="card-body" style={{
-                              backgroundImage: item.featuredImage
-                                ? `url(${item.featuredImage})`
-                                : "",
-                                boxShadow: "inset 0 0 0 2000px rgb(0 0 0 / 79%)",
-                            }}>
+              <div
+                className="card-body"
+                style={{
+                  backgroundImage: item.featuredImage
+                    ? `url(${item.featuredImage})`
+                    : "",
+                  boxShadow: "inset 0 0 0 2000px rgb(0 0 0 / 79%)",
+                }}
+              >
                 <h5 className="card-title">{item.title}</h5>
                 <p className="card-text">{item?.short_description}</p>
-                <a href="/react/services" className="btn btn-primary">
+                <a href="/services" className="btn btn-primary">
                   <i className="bi bi-plus"></i>
                 </a>
               </div>

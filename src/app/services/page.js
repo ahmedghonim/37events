@@ -34,7 +34,7 @@ export default function Services() {
     <>
       <section
         style={{
-          backgroundImage: `url(images/AboutUsBanner.jpg)`,
+          backgroundImage: `url(${data.whatwedo_info.whatwedo_info_image})`,
         }}
         className="black-bg pt-60 pb-40 h-[50vh] position-relative"
       >

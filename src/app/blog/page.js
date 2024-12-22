@@ -76,7 +76,7 @@ export default function Blog() {
                         </div>
                         <div className="blog-content">
                           <a
-                            href={`/react/blog/${blog.slug}`}
+                            href={`/blog/${blog.slug}`}
                             className="blog-title text-white text-uppercase"
                           >
                             {blog.title}
@@ -118,7 +118,7 @@ export default function Blog() {
                             </div>
                             <div className="blog-content">
                               <a
-                                href={`/react/blog/${blog.slug}`}
+                                href={`/blog/${blog.slug}`}
                                 className="blog-title text-white text-uppercase"
                               >
                                 {blog.title}

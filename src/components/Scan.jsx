@@ -1,44 +1,69 @@
-"use client";
-import { Canvas } from '@react-three/fiber'
-import { Center, FirstPersonControls, GizmoHelper, GizmoViewcube, GizmoViewport, OrbitControls } from '@react-three/drei'
+import React, { Suspense } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { useRef } from "react";
 
+function GLTFModel({ glbPath }) {
+  // Reference for rotation
+  const ref = useRef();
 
+  // Load the GLTF model
+  const { scene } = useGLTF(glbPath);
 
+  // Animate rotation
+  useFrame(() => {
+    if (ref.current) {
+      ref.current.rotation.y += 0.01; // Adjust rotation speed
+    }
+  });
 
-function Sphere() {
-    return (
-        <Center top>
-            <directionalLight position={[5, 5, 2]} />
-            <mesh castShadow>
-                <boxGeometry />
-
-                <meshStandardMaterial color="red" />
-            </mesh>
-        </Center>
-    )
+  return <primitive ref={ref} object={scene} scale={[2, 2, 2]} />;
 }
 
-
-
 export default function Scene() {
-    return (
-        <div className="bg-white h-[500px] w-[500px]">
+  return (
+    <div className="w-[400px] h-[400px]">
+      <Canvas>
+        <Suspense fallback={null}>
+          {/* Brighter and whiter ambient light */}
+          <ambientLight intensity={1.5} color="white" /> 
 
-            <Canvas shadows>
-                <GizmoHelper alignment='bottom-right' margin={[100, 100]}>
-                    <GizmoViewcube />
-                    <GizmoViewport />
-                </GizmoHelper>
+          {/* Stronger directional light for focused brightness */}
+          <directionalLight 
+            position={[10, 20, 10]} 
+            intensity={2.5} 
+            color="white" 
+            castShadow 
+          />
 
-                <gridHelper args={[20, 50, "red", "blue"]} />
-                <axesHelper args={[10]} />
-                <OrbitControls />
-                <Sphere />
+          {/* Additional point lights for even distribution */}
+          <pointLight 
+            position={[-15, 15, -15]} 
+            intensity={2.0} 
+            color="white" 
+          />
+          <pointLight 
+            position={[15, -15, 15]} 
+            intensity={1.8} 
+            color="white" 
+          />
 
+          {/* SpotLight for enhanced focus */}
+          <spotLight 
+            position={[0, 30, 10]} 
+            intensity={2.0} 
+            angle={Math.PI / 6} 
+            penumbra={0.5} 
+            color="white" 
+          />
 
+          {/* Load the GLTF model */}
+          <GLTFModel glbPath="/images/3dmodale.glb" />
 
-                <OrbitControls autoRotateSpeed={4} />
-            </Canvas>
-        </div>
-    );
+          {/* Camera controls */}
+          <OrbitControls />
+        </Suspense>
+      </Canvas>
+    </div>
+  );
 }

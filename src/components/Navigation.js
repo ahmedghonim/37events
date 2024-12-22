@@ -43,13 +43,13 @@ export default function Navigation() {
   ];
 
   const menuItemsAR = [
-    { name: "بيت", link: "/" },
+    { name: "الرئيسيه", link: "/" },
     { name: "من نحن", link: "/about/" },
     { name: "ماذا نفعل", link: "/services/" },
     { name: "المشاريع", link: "/projects/" },
     { name: "مدونتنا", link: "/blog/" },
     { name: "وظائف", link: "/careers/" },
-    { name: "اتصال", link: "/contact/" },
+    { name: "تواصل معنا", link: "/contact/" },
     // { name: "English", link: "/#", action: handleMenuWithLanguage },
   ];
 
@@ -102,16 +102,13 @@ export default function Navigation() {
                   </li>
                 ))}
           </ul>
-          <div class="rightnav">
+          <div class="rightnav !top-1/3  !absolute">
             <Scene />
-            <div class="navthumb">
-              <img src="https://thirtysevenevents.perpetualbuild.com/wp-content/uploads/2024/11/service-baloon.png" />
-            </div>
-            <div></div>
+
             <div className="followtext">
               {language === "en" ? "Follow Us on" : "تابعونا على"}
             </div>
-            <ul style={{ position: "absolute", top: "100%" }}>
+            <div className="flex gap-1">
               <li>
                 <a
                   href={data ? data.theme_options_data.linkedin_link : "#"}
@@ -157,7 +154,7 @@ export default function Navigation() {
                   <i className="bi bi-tiktok"></i>
                 </a>
               </li>
-            </ul>
+            </div>
           </div>
         </GhostNavbar>
       </div>

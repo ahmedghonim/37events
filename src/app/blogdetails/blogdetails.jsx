@@ -89,7 +89,7 @@ export default function BlogDetails({ blog_name }) {
                     src={data.post.banner_image}
                     width={1000}
                     height={400}
-                    style={{ objectFit: "cover" }} // Optional styling
+                    style={{ objectFit: "cover" }} 
                     priority
                   />
                 </div>
@@ -99,8 +99,8 @@ export default function BlogDetails({ blog_name }) {
               <div className="row justify-content-center pt-40 pb-40">
                 <div className="col-lg-10 col-md-10">
                   {data.post?.post_content ? (
-                    <p
-                      className="text-lite text-white text-left pt-5 mb-0 font-size-20"
+                    <div
+                      className="text-lite text-white text-left pt-5 mb-0 font-size-20 single-post"
                       dangerouslySetInnerHTML={{
                         __html: data.post.post_content,
                       }}
