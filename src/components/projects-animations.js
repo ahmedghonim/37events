@@ -1,8 +1,8 @@
 "use client";
 import { motion, useScroll, useTransform } from "motion/react";
 import React, { useRef } from "react";
-import TestImage from "../../public/images/career-middle.webp";
-import MaskNumberLg from "../../public/images/e8-mask_sm.svg";
+import TestImage from "public/images/career-middle.webp";
+import MaskNumberLg from "public/images/e8-mask_sm.svg";
 
 function ProjectsAnimations({ data }) {
   const ref = useRef(null);
@@ -104,8 +104,9 @@ function ProjectsAnimations({ data }) {
             ) : null}
           </motion.h2>
         </div>
+
         <motion.img
-          src={TestImage.src}
+          src={data.custom_filed_data?.couterUpSection?.couterup_background}
           className="h-full w-full absolute top-0 left-0 object-cover"
           style={{
             scale,
