@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
-import TextHighlight from "@/app/components/TextHighlight";
-import Shimmer from "@/app/components/Shimmer";
 import CountryList from "country-list-with-dial-code-and-flag";
 import { API_BASE_URL } from "@/constants/api";
+import TextHighlight from "@/components/TextHighlight";
+import Shimmer from "@/components/Shimmer";
 
 async function fetchData() {
   const response = await fetch(`${API_BASE_URL}/work-with-us`);
