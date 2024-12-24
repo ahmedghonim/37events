@@ -61,7 +61,7 @@ export default function Navigation() {
   console.log("Current Path is", currentPath);
 
   return (
-    <>
+    <div className="relative">
       <div className="header-menu">
         <GhostNavbar
           //isOpen={isOpen}
@@ -102,7 +102,7 @@ export default function Navigation() {
                   </li>
                 ))}
           </ul>
-          <div class="rightnav !top-1/3  !absolute">
+          <div class="rightnav !top-1/3 -translate-x-32 !absolute">
             <Scene />
 
             <div className="followtext">
@@ -156,8 +156,81 @@ export default function Navigation() {
               </li>
             </div>
           </div>
+          <div className="md:hidden flex flex-col justify-center h-screen">
+            <div className="w-full flex flex-col  !text-[10px] !text-white">
+              {language === "en"
+                ? menuItems.map(({ id, link, action, name }) => (
+                    <li key={id}>
+                      <Link href={link} onClick={action || handleLinkClick}>
+                        {name}
+                      </Link>
+                    </li>
+                  ))
+                : menuItemsAR.map(({ id, link, action, name }) => (
+                    <li key={id} className="bg-red-900">
+                      <Link href={link} onClick={action || handleLinkClick}>
+                        {name}
+                      </Link>
+                    </li>
+                  ))}
+            </div>
+            <div className="flex flex-col items-center">
+              <Scene />
+
+              <div className="">
+                {language === "en" ? "Follow Us on" : "تابعونا على"}
+              </div>
+              <div className="flex gap-1">
+                <li>
+                  <a
+                    href={data ? data.theme_options_data.linkedin_link : "#"}
+                    target="_blank"
+                    className="me-2"
+                  >
+                    <i className="bi bi-linkedin"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={data ? data.theme_options_data.instagram_link : "#"}
+                    target="_blank"
+                    className="me-2"
+                  >
+                    <i className="bi bi-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={data ? data.theme_options_data.youtube_link : "#"}
+                    target="_blank"
+                    className="me-2"
+                  >
+                    <i className="bi bi-youtube"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={data ? data.theme_options_data.twitter_link : "#"}
+                    target="_blank"
+                    className="me-2"
+                  >
+                    <i className="bi bi-twitter-x"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={data ? data.theme_options_data.tiktok_link : "#"}
+                    target="_blank"
+                    className="me-2"
+                  >
+                    <i className="bi bi-tiktok"></i>
+                  </a>
+                </li>
+              </div>
+            </div>
+          </div>
         </GhostNavbar>
       </div>
-    </>
+    </div>
   );
 }

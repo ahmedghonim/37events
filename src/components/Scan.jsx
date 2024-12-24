@@ -22,7 +22,7 @@ function GLTFModel({ glbPath }) {
 
 export default function Scene() {
   return (
-    <div className="w-[400px] h-[400px]">
+    <div className="lg:w-[400px] lg:h-[400px] size-[250px] ">
       <Canvas>
         <Suspense fallback={null}>
           {/* Brighter and whiter ambient light */}

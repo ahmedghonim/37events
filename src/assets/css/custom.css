@@ -1,5 +1,5 @@
 @tailwind base;
-/* @tailwind components; */
+@tailwind components;
 @tailwind utilities;
 * {
   font-family: "Lama Light", sans-serif !important;
