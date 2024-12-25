@@ -31,10 +31,10 @@ export default function Services() {
   if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <>
+    <div className="">
       <section
         style={{
-          backgroundImage: `url(${data.whatwedo_info.whatwedo_info_image})`,
+          backgroundImage: `url(${data.whatwedo_info?.whatwedo_info_image})`,
         }}
         className="black-bg pt-60 pb-40 h-[50vh] position-relative"
       >
@@ -68,8 +68,8 @@ export default function Services() {
 
       {/* <!-- Next Section --> */}
       <section className="black-bg pt-40 pb-60 whychoose-section position-relative">
-        <div className="container">
-          <div className="row">
+        <div className="container z-0">
+          <div className="row z-0">
             <div className="col-md-12">
               <div className="accordion" id="accordionExample">
                 <div className="row">
@@ -127,16 +127,16 @@ export default function Services() {
               </div>
             </div>
           </div>
+          <div className="left-bottom-ribbon max-md:size-[50px] !-bottom-1">
+            <img
+              src={"images/yellow-ribbon.png"}
+              alt="ribbon"
+              className="img-fluid"
+            />
+          </div>
         </div>
         {/* <!-- Ribbon image at the left bottom --> */}
-        <div className="left-bottom-ribbon">
-          <img
-            src={"images/yellow-ribbon.png"}
-            alt="ribbon"
-            className="img-fluid"
-          />
-        </div>
       </section>
-    </>
+    </div>
   );
 }

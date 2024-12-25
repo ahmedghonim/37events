@@ -766,7 +766,8 @@ body .lang-ar {
 .lang-ar .bottom-right-image {
   left: 0;
   right: initial;
-  transform: rotate(180deg);
+  rotate: -180deg;
+  transform: scaleY(-1);
 }
 
 .lang-ar .blog-box h4 {

@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from "react";
 
-const TextHighlight = ({textData, extraClass=''}) => {
+const TextHighlight = ({ textData, extraClass = "" }) => {
   const [isInView, setIsInView] = useState(false);
   const textRef = useRef(null);
 
-  const words = textData.split(' ');
+  const words = textData.split(" ");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -23,20 +23,20 @@ const TextHighlight = ({textData, extraClass=''}) => {
   }, []);
 
   return (
-    <div ref={textRef} className={`text-highlight  text-gray ${extraClass}`}>
+    <div
+      ref={textRef}
+      className={`text-highlight  text-gray z-10 ${extraClass}`}
+    >
       {words.map((word, index) => (
         <span
           key={index}
-          className={`word ${isInView ? 'highlight' : ''}`}
+          className={`word ${isInView ? "highlight" : ""}`}
           style={{ animationDelay: `${index * 0.2}s` }}
         >
           {word}
         </span>
       ))}
     </div>
-
-
-
   );
 };
 

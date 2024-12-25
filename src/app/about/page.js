@@ -36,8 +36,8 @@ export default function AboutPage() {
       {data?.code === 200 && (
         <>
           <section className="black-bg pt-60 pb-60 position-relative">
-            <div className="container">
-              <div className="row justify-content-center right-image-container">
+            <div className="container z-10">
+              <div className="row justify-content-center right-image-container z-10">
                 <div className="col-lg-12 col-md-12">
                   <div className="content text-uppercase image-section">
                     {data?.postdata?.custom_filed?.who_we_are?.title && (
@@ -56,13 +56,13 @@ export default function AboutPage() {
                       <img
                         src={"images/popcorn.png"}
                         alt="popcorn"
-                        className="img-fluid popcorn-image"
+                        className="img-fluid popcorn-image z-[0] max-lg:size-[100px] max-lg:top-[35%] max-lg:-translate-y-1/2"
                       />
                     </h1>
                   </div>
                 </div>
               </div>
-              <div className="row d-flex  map-content">
+              <div className="row d-flex  map-content z-10">
                 <div className="col-md-6">
                   {data?.postdata?.custom_filed?.who_we_are?.map_pins && (
                     <img
@@ -74,14 +74,14 @@ export default function AboutPage() {
                 </div>
                 <div className="col-md-6">
                   {data?.postdata?.custom_filed?.who_we_are?.description && (
-                    <p className="text-white py-5">
+                    <p className="text-white py-5 z-10">
                       {data.postdata.custom_filed.who_we_are.description}
                     </p>
                   )}
                 </div>
               </div>
             </div>
-            <div className="left-bottom-ribbon image-section-pulse">
+            <div className="left-bottom-ribbon image-section-pulse max-lg:size-[80px]">
               <img
                 src={"images/orange-ribbon.png"}
                 alt="ribbon"

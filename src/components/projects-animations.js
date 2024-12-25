@@ -41,7 +41,7 @@ function ProjectsAnimations({ data }) {
               <div className="container">
                 <div className="row justify-content-center">
                   <div className="col-lg-10 col-md-10 text-center">
-                    <h5 className="text-white py-5 max-lg:text-3xl">
+                    <h5 className="text-white py-5 max-lg:text-3xl z-10">
                       {
                         data.custom_filed_data.couterUpSection
                           .creating_timeless_experience

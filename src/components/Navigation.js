@@ -167,7 +167,7 @@ export default function Navigation() {
                     </li>
                   ))
                 : menuItemsAR.map(({ id, link, action, name }) => (
-                    <li key={id} className="bg-red-900">
+                    <li key={id}>
                       <Link href={link} onClick={action || handleLinkClick}>
                         {name}
                       </Link>

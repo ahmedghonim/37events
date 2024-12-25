@@ -44,7 +44,7 @@ export default function CareerPage() {
     position: "",
     contactWebsite: "",
     contactCountry: "",
-    countrycode: "+93",
+    countrycode: "+966",
     resume: null,
     contactComments: "",
     contactRegion: "",
@@ -231,7 +231,7 @@ export default function CareerPage() {
       {/* Next Section */}
       <section className="black-bg pt-60 pb-0 position-relative ">
         <div className="container">
-          <div className="row  right-image-container">
+          <div className="row  right-image-container ">
             {/* Image to animate */}
             <div className="col-lg-6 col-md-6">
               <div className="content text-uppercase">
@@ -257,7 +257,7 @@ export default function CareerPage() {
             <img
               src={"images/career.png"}
               alt="popcorn"
-              class="img-fluid career-image"
+              class="img-fluid career-image max-md:top-10 max-md:-translate-x-[350%]"
             />
           </div>
           <div className="row d-flex justify-content-end career-content text-justify text-lite">

@@ -39,7 +39,7 @@ export default function ContactForm() {
     contactRegion: "",
     contactComments: "",
     message: "",
-    countrycode: "+93",
+    countrycode: "+966",
   });
 
   const [errors, setErrors] = useState({});
