@@ -85,147 +85,100 @@ export default function Navigation() {
             iconColor: "#fff",
           }}
         >
-          <ul>
-            {language === "en"
-              ? menuItems.map(({ id, link, action, name }) => (
-                  <li key={id} className={currentPath === link ? "active" : ""}>
-                    <Link href={link} onClick={action || handleLinkClick}>
-                      {name}
-                    </Link>
-                  </li>
-                ))
-              : menuItemsAR.map(({ id, link, action, name }) => (
-                  <li key={id} className={currentPath === link ? "active" : ""}>
-                    <Link href={link} onClick={action || handleLinkClick}>
-                      {name}
-                    </Link>
-                  </li>
-                ))}
-          </ul>
-          <div class="rightnav !top-1/3 -translate-x-32 !absolute">
-            <Scene />
-
-            <div className="followtext">
-              {language === "en" ? "Follow Us on" : "تابعونا على"}
-            </div>
-            <div className="flex gap-1">
-              <li>
-                <a
-                  href={data ? data.theme_options_data.linkedin_link : "#"}
-                  target="_blank"
-                  className="me-2"
-                >
-                  <i className="bi bi-linkedin"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={data ? data.theme_options_data.instagram_link : "#"}
-                  target="_blank"
-                  className="me-2"
-                >
-                  <i className="bi bi-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={data ? data.theme_options_data.youtube_link : "#"}
-                  target="_blank"
-                  className="me-2"
-                >
-                  <i className="bi bi-youtube"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={data ? data.theme_options_data.twitter_link : "#"}
-                  target="_blank"
-                  className="me-2"
-                >
-                  <i className="bi bi-twitter-x"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={data ? data.theme_options_data.tiktok_link : "#"}
-                  target="_blank"
-                  className="me-2"
-                >
-                  <i className="bi bi-tiktok"></i>
-                </a>
-              </li>
-            </div>
-          </div>
-          <div className="md:hidden flex flex-col justify-center h-screen">
-            <div className="w-full flex flex-col  !text-[10px] !text-white">
+          <div className="flex max-lg:justify-between lg:!p-10 !px-10 !pt-20 max-lg:flex-col  h-screen">
+            <div className="flex flex-col justify-center">
               {language === "en"
                 ? menuItems.map(({ id, link, action, name }) => (
-                    <li key={id}>
-                      <Link href={link} onClick={action || handleLinkClick}>
+                    <li
+                      key={id}
+                      className={
+                        currentPath === link
+                          ? "active max-lg:!text-[2px]"
+                          : "max-lg:!text-[2px]"
+                      }
+                    >
+                      <Link
+                        className="max-md:!text-[20px]"
+                        href={link}
+                        onClick={action || handleLinkClick}
+                      >
                         {name}
                       </Link>
                     </li>
                   ))
                 : menuItemsAR.map(({ id, link, action, name }) => (
-                    <li key={id}>
-                      <Link href={link} onClick={action || handleLinkClick}>
+                    <li
+                      key={id}
+                      className={
+                        currentPath === link
+                          ? "active max-lg:!text-[2px]"
+                          : "max-lg:!text-[2px]"
+                      }
+                    >
+                      <Link
+                        className="max-md:!text-[20px]"
+                        href={link}
+                        onClick={action || handleLinkClick}
+                      >
                         {name}
                       </Link>
                     </li>
                   ))}
             </div>
-            <div className="flex flex-col items-center">
-              <Scene />
+            <div className=" flex flex-col justify-center h-screen">
+              <div className="flex flex-col items-center ">
+                <Scene />
 
-              <div className="">
-                {language === "en" ? "Follow Us on" : "تابعونا على"}
-              </div>
-              <div className="flex gap-1">
-                <li>
-                  <a
-                    href={data ? data.theme_options_data.linkedin_link : "#"}
-                    target="_blank"
-                    className="me-2"
-                  >
-                    <i className="bi bi-linkedin"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={data ? data.theme_options_data.instagram_link : "#"}
-                    target="_blank"
-                    className="me-2"
-                  >
-                    <i className="bi bi-instagram"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={data ? data.theme_options_data.youtube_link : "#"}
-                    target="_blank"
-                    className="me-2"
-                  >
-                    <i className="bi bi-youtube"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={data ? data.theme_options_data.twitter_link : "#"}
-                    target="_blank"
-                    className="me-2"
-                  >
-                    <i className="bi bi-twitter-x"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={data ? data.theme_options_data.tiktok_link : "#"}
-                    target="_blank"
-                    className="me-2"
-                  >
-                    <i className="bi bi-tiktok"></i>
-                  </a>
-                </li>
+                <div className="">
+                  {language === "en" ? "Follow Us on" : "تابعونا على"}
+                </div>
+                <div className="flex gap-1">
+                  <li className="max-lg:!text-[10px]">
+                    <a
+                      href={data ? data.theme_options_data.linkedin_link : "#"}
+                      target="_blank"
+                      className="me-2"
+                    >
+                      <i className="bi bi-linkedin"></i>
+                    </a>
+                  </li>
+                  <li className="max-lg:!text-[10px]">
+                    <a
+                      href={data ? data.theme_options_data.instagram_link : "#"}
+                      target="_blank"
+                      className="me-2"
+                    >
+                      <i className="bi bi-instagram"></i>
+                    </a>
+                  </li>
+                  <li className="max-lg:!text-[10px]">
+                    <a
+                      href={data ? data.theme_options_data.youtube_link : "#"}
+                      target="_blank"
+                      className="me-2"
+                    >
+                      <i className="bi bi-youtube"></i>
+                    </a>
+                  </li>
+                  <li className="max-lg:!text-[10px]">
+                    <a
+                      href={data ? data.theme_options_data.twitter_link : "#"}
+                      target="_blank"
+                      className="me-2"
+                    >
+                      <i className="bi bi-twitter-x"></i>
+                    </a>
+                  </li>
+                  <li className="max-lg:!text-[10px]">
+                    <a
+                      href={data ? data.theme_options_data.tiktok_link : "#"}
+                      target="_blank"
+                      className="me-2"
+                    >
+                      <i className="bi bi-tiktok"></i>
+                    </a>
+                  </li>
+                </div>
               </div>
             </div>
           </div>

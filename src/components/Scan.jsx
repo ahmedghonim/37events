@@ -17,12 +17,12 @@ function GLTFModel({ glbPath }) {
     }
   });
 
-  return <primitive ref={ref} object={scene} scale={[2, 2, 2]} />;
+  return <primitive ref={ref} object={scene} scale={[3,3,3]} />;
 }
 
 export default function Scene() {
   return (
-    <div className="lg:w-[400px] lg:h-[400px] size-[250px] ">
+    <div className="lg:w-[600px] lg:h-[600px] size-[250px] ">
       <Canvas>
         <Suspense fallback={null}>
           {/* Brighter and whiter ambient light */}

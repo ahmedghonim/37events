@@ -78,15 +78,15 @@
   background: none !important;
   padding: 0px !important;
 }
-.header-menu ul li a {
+.header-menu div li a {
   font-family: "GothamLight";
   font-size: 40px;
   color: #aeaeae;
   text-transform: uppercase;
 }
 
-.header-menu ul li a:hover,
-.header-menu ul li a:active {
+.header-menu div li a:hover,
+.header-menu div li a:active {
   font-family: "GothamMedium";
   color: white;
   text-transform: uppercase;
